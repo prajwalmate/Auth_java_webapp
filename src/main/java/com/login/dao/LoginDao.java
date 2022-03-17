@@ -7,14 +7,13 @@ import java.sql.ResultSet;
 
 public class LoginDao {
 
-	public boolean validate(String name,String pass){  
-		boolean status=false;  
+	public boolean validate(String empid,String pass){  
 		try{  
 			Class.forName("oracle.jdbc.driver.OracleDriver");
             Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","system","0");
 			   
-			PreparedStatement ps=con.prepareStatement("select * from AuthUsers where name=? and pass=?");  
-			ps.setString(1,name);  
+			PreparedStatement ps=con.prepareStatement("select * from prajwal_111915090_detail where empid=? and password=?");  
+			ps.setString(1,empid);  
 			ps.setString(2,pass);  
 			      
 			ResultSet rs=ps.executeQuery();  
@@ -26,7 +25,7 @@ public class LoginDao {
 		catch(Exception e){
 			System.out.println(e);
 		}  
-		return status;  
+		return false;  
 	} 
 	
 }

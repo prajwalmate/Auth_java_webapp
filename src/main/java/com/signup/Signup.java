@@ -27,14 +27,14 @@ public class Signup extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		SignupDao dao = new SignupDao();
-		String uname = request.getParameter("uname");
+		String empid = request.getParameter("empid");
 		String pass = request.getParameter("pass");
 		String first_name = request.getParameter("first_name");
 		String last_name = request.getParameter("last_name");
 		String dob = request.getParameter("dob");
-		String email = request.getParameter("email");
+		String contact = request.getParameter("contact");
 		
-		dao.insert(uname, pass, first_name, last_name, dob, email);
+		dao.insert(empid, pass, first_name, last_name, dob, contact);
 		
 		//This is a change
 		response.sendRedirect("login.jsp");

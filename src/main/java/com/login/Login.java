@@ -28,13 +28,13 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		LoginDao dao = new LoginDao();
-		String uname = request.getParameter("uname");
+		String empid = request.getParameter("empid");
 		String pass = request.getParameter("pass");
 		
-		if(dao.validate(uname, pass)) {
+		if(dao.validate(empid, pass)) {
 			HttpSession session = request.getSession();
-			session.setAttribute("uname", uname);
-			response.sendRedirect("success.jsp");
+			session.setAttribute("empid", empid);
+			response.sendRedirect("result.jsp");
 		}
 		else {
 			response.sendRedirect("login.jsp");

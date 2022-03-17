@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.employee.Employee;
 import com.report.dao.ReportDao;
 import com.student.Student;
 
@@ -40,31 +41,24 @@ public class Report extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-String genre = request.getParameter("genre");
 		
 		ReportDao dao  = new ReportDao();
-		ArrayList<Student> Students = new ArrayList<>();
+		ArrayList<Employee> Employees = new ArrayList<>();
 		
-		String lname = request.getParameter("lname");
+		String empid = request.getParameter("empid");
 		
-		Students = dao.check(lname);
-		for(Student student:Students) System.out.println(student.getEmail()+"\n");
-		if(Students.size()!=0)
+		Employees = dao.check(empid);
+		if(Employees.size()!=0)
 		{
 			
-//			HttpSession session = request.getSession();
-			request.setAttribute("Students", Students);
-			request.setAttribute("lname", lname);
-//			response.sendRedirect("recommendtionResult.jsp");
+			request.setAttribute("Employees", Employees);
+			request.setAttribute("empid", empid);
 			 RequestDispatcher rd = request.getRequestDispatcher("results.jsp");
 			 
-			 rd.forward(request, response);
-	        
+			 rd.forward(request, response);    
 		}
 		else
 		{
-			
 			response.sendRedirect("success.jsp");
 		}
 		

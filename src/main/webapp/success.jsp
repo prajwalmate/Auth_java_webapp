@@ -8,21 +8,16 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-<style>
-	.LoginForm{
-		justify-content: center;
-		display:flex;
-	}
-</style>
+<style></style>
 
 </head>
 <body>
 
-	<div class="ReportForm">
-		<h1>Data Retrieval Form</h1>
+	<div align="center" class="mt-5">
+		<h1>Generation Of Reports</h1>
 		<form action="Report" method="post">
-			Enter Last Name: <input type="text" name="lname"><br>
-			<input type="submit" value="Generate Report">
+			Enter Employee ID : <input class="my-3" type="text" name="empid"><br>
+			<input class="btn btn-success my-3" type="submit" value="Generate Report">
 		</form>
 	</div>
 

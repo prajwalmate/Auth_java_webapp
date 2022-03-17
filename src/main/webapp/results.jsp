@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@page import="java.util.ArrayList"
- 		import="com.student.Student"
+ 		import="com.employee.Employee"
  	%>
 <!DOCTYPE html>
 <html>
@@ -13,32 +13,42 @@
 </head>
 <body>
 
-	<form action="Logout" class="nav navbar-dark bg-dark p-2 mb-3 m-1 justify-content-end rounded">
-			<input type="submit" class="btn btn-outline-light" value="Logout">
-	</form>
+	<h2 align="center" class="mt-5">Employee Details with Employee ID = <b><%=request.getAttribute("empid") %></b></h2>
+
+	<!--  <form action="Logout" class="nav navbar-dark bg-dark p-2 mb-3 m-1 justify-content-end rounded">
+			<input type="submit" class="btn btn-outline-light" value="Logout"> 
+	</form> -->
 	<div class="container my-3">
-		<table border ="1" width="500" align="center" class="mt-5">
+		<table border ="2" width="1100" align="center" class="mt-6">
          <tr bgcolor="00FF7F">
-          <th><b>User Name</b></th>
+          <th><b>Employee ID</b></th>
           <th><b>First Name</b></th>
           <th><b>Last Name</b></th>
           <th><b>DOB</b></th>
-          <th><b>Email</b></th>
+          <th><b>Contact</b></th>
+          <th><b>Role</b></th>
+          <th><b>Salary</b></th>
+          <th><b>Bonus</b></th>
+          <th><b>Annual Salary</b></th>
          </tr>
         <%-- Fetching the attributes of the request object
              which was previously set by the servlet 
               "StudentServlet.java"
         --%> 
-        <%ArrayList<Student> Students = (ArrayList<Student>)request.getAttribute("Students");
-        for(Student student:Students){%>
+        <%ArrayList<Employee> Employees = (ArrayList<Employee>)request.getAttribute("Employees");
+        for(Employee employee:Employees){%>
         <%-- Arranging data in tabular form
         --%>
             <tr>
-                <td><%=student.getUname()%></td>
-                <td><%=student.getFname()%></td>
-                <td><%=student.getLname()%></td>
-                <td><%=student.getDOB()%></td>
-                <td><%=student.getEmail()%></td>
+                <td><%=employee.getEmpid()%></td>
+                <td><%=employee.getFname()%></td>
+                <td><%=employee.getLname()%></td>
+                <td><%=employee.getDOB()%></td>
+                <td><%=employee.getContact()%></td>
+                <td><%=employee.getRole()%></td>
+                <td><%=employee.getSalary()%></td>
+                <td><%=employee.getBonus()%></td>
+                <td><%=employee.getAnnualSalary()%></td>
             </tr>
             <%}%>
         </table>

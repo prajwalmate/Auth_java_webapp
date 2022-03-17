@@ -9,22 +9,15 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 <style>
-	.LoginForm{
-		justify-content: center;
-		display:flex;
-	}
 </style>
 
 </head>
 <body>
 
-	<h1>Student Enrollment Login Form</h1>
-	<br>
-
-	<div class="container">
-		<h3>Student Enrollment Login Form</h3>
+	<div class="container mt-5" align="center">
+		<h3>Employee Login Form</h3>
 		<form action="Login" method="post">
-			<b>User Name :</b> <input type="text" name="uname" class="my-1"><br>
+			<b> Employee ID :</b> <input type="text" name="empid" class="my-1"><br>
 			<b> Password:</b> <input type="password" name="pass" class="my-1"><br>
 			<input class="btn btn-success my-3" type="submit" value="Login">
 			<a href="signup.jsp" class="btn btn-outline-secondary mx-2 my-3">Create new account</a>
