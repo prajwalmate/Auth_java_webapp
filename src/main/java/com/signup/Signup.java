@@ -36,6 +36,7 @@ public class Signup extends HttpServlet {
 		
 		dao.insert(uname, pass, first_name, last_name, dob, email);
 		
+		//This is a change
 		response.sendRedirect("login.jsp");
 		
 	}
